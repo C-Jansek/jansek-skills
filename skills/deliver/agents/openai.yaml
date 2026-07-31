@@ -1,0 +1,5 @@
+interface:
+  display_name: "Deliver"
+  short_description: "Deliver a Pitch — build uphill then downhill"
+policy:
+  allow_implicit_invocation: false
