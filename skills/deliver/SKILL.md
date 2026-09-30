@@ -20,6 +20,8 @@ Every Pitch, scope map, and ticket is an issue with a title. Refer by name, neve
 
 The scope map is a single issue, labelled `scope-map`, child of the Pitch. It is the living index — always current, always loaded first.
 
+Use `/my-voice` when writing the map or any (sub)tickets.
+
 ### Map body
 
 ```markdown
@@ -96,9 +98,9 @@ User invokes with a Pitch (issue URL or name).
 
 5. **Brain-dump imagined tasks.** User lists everything they think needs building. Agent helps surface missing areas. All tasks start as `?` imagined, listed under a temporary unscoped section on the map. Completion: user says the list is sufficient.
 
-6. **Carve the first scope.** Grill the user: what's core (central to the Pitch), small, novel (never built before, unknown)? Carve the first scope from the imagined tasks. Create its subheading under `## Scopes`. Move relevant tasks under it. Completion: first scope heading exists, tasks assigned, user confirms.
+6. **Carve the first scope(s).** Grill the user: what's core (central to the Pitch), small, novel (never built before, unknown)? Carve the first scope from the imagined tasks. Create its subheading under `## Scopes`. Move relevant tasks under it. Completion: first scope heading exists, tasks assigned, user confirms.
 
-7. **Begin uphill work.** Start working the first scope. Research, prototypes, clarifying unknowns. Update tasks as discoveries happen — some imagined tasks become discovered, new discovered tasks appear. Completion: scope transitions to downhill as unknowns clear.
+7. **Begin uphill work.** Start working the first scope (see below).
 
 ### Subsequent session (from an existing scope map)
 
