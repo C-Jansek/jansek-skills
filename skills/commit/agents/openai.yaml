@@ -1,0 +1,5 @@
+interface:
+  display_name: "Commit"
+  short_description: "Create focused commits with clear messages"
+policy:
+  allow_implicit_invocation: true

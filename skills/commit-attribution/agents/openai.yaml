@@ -1,0 +1,5 @@
+interface:
+  display_name: "Commit Attribution"
+  short_description: "Attribute AI contributions in commits"
+policy:
+  allow_implicit_invocation: true
