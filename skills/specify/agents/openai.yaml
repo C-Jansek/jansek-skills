@@ -1,0 +1,5 @@
+interface:
+  display_name: "Specify"
+  short_description: "Mould a raw idea into an issue ready to pick up by a human or agent"
+policy:
+  allow_implicit_invocation: false
