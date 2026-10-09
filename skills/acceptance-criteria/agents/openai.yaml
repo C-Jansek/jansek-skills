@@ -1,5 +1,5 @@
 interface:
   display_name: "Acceptance criteria"
-  short_description: "Generate an acceptance test comment to help other users test these changes."
+  short_description: "Generate acceptance test instructions to help other users test these changes."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

@@ -1,14 +1,20 @@
 ---
-name: "Acceptance criteria"
-description: "Generate an acceptance test comment to help other users test these changes."
+name: acceptance-criteria
+description: "Generate acceptance test instructions to help other users test these changes."
+disable-model-invocation: true
 ---
 
 ### List touched or added flows and functionality
 
-Define a list of all the flows touched or created. Also add other functionality that was touched.
+Inspect the changes from the provided fixed point, both ticket/spec (intended changes) and code (actual changes).
+If no change set was provided, default to the difference with the default branch of the repository.
+
+Define a list of all the flows touched or created. 
+Also add other functionality that was touched if it influences user-visible behavior.
 
 Run through it and define user flows to test, to see if the functionality is working as expected.
-Include user flows for changed functionality and new functionality. Make sure the list is exhaustive.
+Include user flows for changed functionality and new functionality. 
+Make sure the list is exhaustive and covers all user-visible behavior changes in at least one flow.
 
 ### Purge and combine
 
@@ -16,25 +22,23 @@ Go through the user flows to purge and combine:
 
 1. Combine multiple smaller user flows into a single flow
     - if they can hook after each other and reuse the leftover state after the previous flow.
-2. Purge a user flow of which the individual variants are already included in another scenario.
-    - Not all combinatorial combinations need to be verified.
-    - Only include a step in different flows if:
-        - Steps after it in the flow depend on it
-        - It is a different variant
-        - It may behave differently due to different preceding steps
+2. Purge a user flow of which the individual variants are already included in another flow.
+    - Remove repeated steps only if the behavior and downstream state are the same for both flows.
 
 A user flow may include setup steps necessary to get to a state where the actually tested flow can start.
 
 ### Format
 
-Display the flows in a markdown code block. This makes it easy to copy over.
-Provide clickable links to starting points or actions if possible.
-
-Each flow is titled using a ### Heading 3.
+Each flow is titled using a Heading 3.
 The steps (actions the user must take) are a numbered list. This also includes setup steps.
 The validations are listed as an `a, b, c` list directly after the numbered step where the validation takes place.
 Some steps (like setup steps) might not have validations, their result is part of a bigger whole and tested later in the
 flow.
+
+Provide clickable links to starting points or actions if possible.
+Otherwise leave the action as plain text, instead of guessing an URL.
+
+Output flows in a Markdown code block. This makes it easy to copy over.
 
 ### Example
 

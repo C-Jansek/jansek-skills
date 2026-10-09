@@ -21,7 +21,7 @@ fi
 mkdir -p "$NEW_SKILLS_DIR"
 
 SKILL_TEXT="---
-name: \"${NEW_SKILL_SENTENCE}\"
+name: ${NEW_SKILL_NAME_LOWER}
 description: \"\"
 ---
 "
