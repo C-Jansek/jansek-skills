@@ -20,3 +20,13 @@ Skills land in `~/.agents/skills/`. Run again after pulling new skills.
 
 - `skills/` — user-invokable agent skills (one subdirectory per skill)
 - `scripts/` — automation scripts
+
+## Usage
+
+To create a new skill, you can bootstrap the new SKILL.md file and the openai.yml config file:
+
+```bash
+./scripts/new-skill.sh name-of-skill
+```
+
+The name of the skill will be prefilled, but you still need to add the description to both files.
