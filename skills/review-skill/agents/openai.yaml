@@ -1,0 +1,5 @@
+interface:
+  display_name: "Review skill"
+  short_description: "Review a handwritten skill provided by the user."
+policy:
+  allow_implicit_invocation: false
