@@ -1,0 +1,5 @@
+interface:
+  display_name: "Process review comments"
+  short_description: "Process review comments in separate commits."
+policy:
+  allow_implicit_invocation: false
