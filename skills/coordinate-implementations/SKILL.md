@@ -1,6 +1,6 @@
 ---
 name: coordinate-implementations
-description: Implement one or multiple specified tickets through one coordinator agent.
+description: Implement specified tickets in dependency order on a new branch, then create a pull request.
 disable-model-invocation: true
 ---
 
@@ -17,18 +17,9 @@ If multiple tickets are unblocked, choose the smallest ticket first.
 Tickets should never have cyclic blocking relationships, or depend on unimplemented tickets outside of the specified
 tickets. If this is the case, stop here and raise the issue to the user.
 
-Implementing a ticket means the following:
+Implement each ticket as one work item. Use a subagent to run `/implementation` for that ticket only; it owns implementation, review, acceptance-criteria verification, testing, and committing. Pass the ticket and its acceptance criteria as the work item. Do not combine tickets in one `/implementation` invocation.
 
-1. Implementor: Use a subagent to /implement the issue and /commit its changes.
-2. Reviewer: Use a subagent to perform a /code-review on the commits from the implementor and fix any issues it finds.
-    - The fixed point to review from is the last commit before the implementor agent started working.
-    - Any issues must be fixed by the /code-review agent itself.
-3. Verifier: Use a subagent to verify the acceptance criteria one by one.
-    - If all the acceptance criteria are met, verify the working tree is clean, test suite passes, and the ticket is
-      marked as completed.
-    - If the acceptance criteria are unmet, restart at 1, keep the existing progress, but instruct the subagent to fix
-      the unmet acceptance criteria.
-4. Continue to the next ticket.
+Once `/implementation` reports the ticket complete, mark the ticket as completed and continue to the next unblocked ticket.
 
 Check if all tickets are completed, marked as such, acceptance criteria are met, and the full test suite passes.
 Then use /pr to create a pull request for the branch with all the changes.

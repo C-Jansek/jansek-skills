@@ -1,0 +1,5 @@
+interface:
+  display_name: "Implementation"
+  short_description: "Implement and verify one ticket or actionable review comment"
+policy:
+  allow_implicit_invocation: true

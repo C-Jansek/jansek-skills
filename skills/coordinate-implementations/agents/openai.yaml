@@ -1,5 +1,5 @@
 interface:
   display_name: "Coordinate implementations"
-  short_description: "Implement one or more specified tickets through one coordinator agent"
+  short_description: "Implement specified tickets in dependency order and create a PR"
 policy:
   allow_implicit_invocation: false

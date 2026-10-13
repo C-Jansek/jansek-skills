@@ -1,5 +1,5 @@
 interface:
   display_name: "Process review comments"
-  short_description: "Process review comments in separate commits."
+  short_description: "Implement actionable review comments separately; report discussions"
 policy:
   allow_implicit_invocation: false
