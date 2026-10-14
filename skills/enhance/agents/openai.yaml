@@ -1,0 +1,5 @@
+interface:
+  display_name: "Enhance"
+  short_description: "Improve engineering tools by learning from earlier agent sessions"
+policy:
+  allow_implicit_invocation: false
