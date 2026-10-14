@@ -1,0 +1,5 @@
+interface:
+  display_name: "Principle context not control"
+  short_description: "Principle: engineer the environment to promote good behavior over micromanaging. Use when another skill or the user explicitly directs you to use this skill."
+policy:
+  allow_implicit_invocation: true
