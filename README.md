@@ -11,7 +11,15 @@ Enjoy!
 >
 > Inspired and built on top of [mattpocock/skills](https://github.com/mattpocock/skills) by Matt Pocock.
 >
-> Inspired by [pstack by poteto](https://github.com/cursor/plugins/tree/main/pstack), which is part of the Cursor official plugins.
+> Inspired by [pstack by poteto](https://github.com/cursor/plugins/tree/main/pstack), which is part of the Cursor
+> official plugins.
+
+## Jansek mode
+
+Start any request prefixed by /jansek-mode.
+The skill will choose from the correct playbook to act on your request.
+The playbook will guide the agent to handle the request, using reusable skills for parts of the request.
+
 
 ## Skill types
 
@@ -42,23 +50,29 @@ The difference is that the model-invoked processes are only the reusable parts.
 Clone the repo, then symlink skills to your user skills directory:
 
 ```bash
-./scripts/link-skills.sh
+./skills/jansek-mode/scripts/link-skills.sh
 ```
 
 Skills land in `~/.agents/skills/`. Run again after pulling new skills. It will not remove old skills.
 
 ## Development
+
 ### Structure
 
-- `skills/` — user-invokable agent skills (one subdirectory per skill)
-- `scripts/` — automation scripts
+- `skills/` — agent skills (one subdirectory per skill)
 
 ### Creating a new skill
 
-To create a new skill, you can bootstrap the new SKILL.md file and the openai.yml config file:
+To create a new skill, you can ask an agent:
+
+```md
+/jansek-mode create a new skill for me named code review
+```
+
+Or you can bootstrap the new SKILL.md file and the openai.yml config file yourself:
 
 ```bash
-./scripts/new-skill.sh name-of-skill
+./skills/jansek-mode/scripts/new-skill.sh name-of-skill
 ```
 
 The name of the skill will be prefilled, but you still need to add the description to both files.

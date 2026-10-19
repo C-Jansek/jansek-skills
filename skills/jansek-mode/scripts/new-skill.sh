@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SKILLS_DIR="$(cd "$(dirname "$0")/../skills" && pwd)"
+SKILLS_DIR="$(cd "$(dirname "$0")/../.." && pwd)"
 if [ ! -d "$SKILLS_DIR" ]; then
   echo "Error: skills directory not found at $SKILLS_DIR" >&2
   exit 1
 fi
 
-NEW_SKILL_NAME=$1
+NEW_SKILL_NAME=${1//[^a-zA-Z]/-}
 NEW_SKILL_NAME_LOWER=$(echo "$NEW_SKILL_NAME" | tr '[:upper:]' '[:lower:]')
 NEW_SKILL_NAME_UPPER="$(tr '[:lower:]' '[:upper:]' <<< "${NEW_SKILL_NAME_LOWER:0:1}")${NEW_SKILL_NAME_LOWER:1}"
 NEW_SKILL_SENTENCE="${NEW_SKILL_NAME_UPPER//-/ }"

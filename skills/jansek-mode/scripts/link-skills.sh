@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SKILLS_DIR="$(cd "$(dirname "$0")/../skills" && pwd)"
+SKILLS_DIR="$(cd "$(dirname "$0")/../.." && pwd)"
 USER_SKILLS_DIR="$HOME/.agents/skills"
 
 if [ ! -d "$SKILLS_DIR" ]; then
