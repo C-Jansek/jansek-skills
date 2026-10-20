@@ -1,0 +1,5 @@
+interface:
+  display_name: "Verify acceptance criteria"
+  short_description: "Guide a user through acceptance flows and record outcomes"
+policy:
+  allow_implicit_invocation: true

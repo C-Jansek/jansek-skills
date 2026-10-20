@@ -8,10 +8,11 @@ Router skill to execute a playbook, chosen based on the specific request from th
 
 ### Playbooks
 
-| Task                    | Playbook                                                    | Use when                                                          |
-|-------------------------|-------------------------------------------------------------|-------------------------------------------------------------------|
-| Create or edit skill    | ./skills/jansek-mode/references/playbooks/write-skill.md    | User want to create a new skill, or edit an existing skill.       |
-| Create or edit playbook | ./skills/jansek-mode/references/playbooks/write-playbook.md | User want to create a new playbook, or edit an existing playbook. |
+| Task                    | Playbook                                                       | Use when                                                                                                       |
+|-------------------------|----------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| Create or edit skill    | ./skills/jansek-mode/references/playbooks/write-skill.md       | User want to create a new skill, or edit an existing skill.                                                    |
+| Create or edit playbook | ./skills/jansek-mode/references/playbooks/write-playbook.md    | User want to create a new playbook, or edit an existing playbook.                                              |
+| Implement a feature     | ./skills/jansek-mode/references/playbooks/implement-feature.md | User wants to collaboratively specify and implement one existing work item through a reviewed GitLab MR draft. |
 
 When no playbook matches, stop here and tell the user.
 

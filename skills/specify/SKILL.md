@@ -1,7 +1,6 @@
 ---
 name: specify
-description: Mould a raw idea into an issue ready to pick up by a human or agent.
-disable-model-invocation: true
+description: Mould a raw idea into an issue ready to pick up by a human or agent. Use when a feature or issue requires more information before implementation.
 ---
 
 A raw idea comes in. Before it can be implemented, the following must be made clear in order:

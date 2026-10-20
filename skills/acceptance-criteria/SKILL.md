@@ -1,7 +1,6 @@
 ---
 name: acceptance-criteria
-description: "Generate acceptance test instructions to help other users test these changes."
-disable-model-invocation: true
+description: "Generate acceptance test instructions to help other users test these changes. Use when user asks to create acceptance check criteria."
 ---
 
 ### List touched or added flows and functionality

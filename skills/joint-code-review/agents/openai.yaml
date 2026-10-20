@@ -1,0 +1,5 @@
+interface:
+  display_name: "Joint code review"
+  short_description: "Review local changes or GitLab MRs together"
+policy:
+  allow_implicit_invocation: true

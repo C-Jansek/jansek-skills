@@ -1,0 +1,5 @@
+interface:
+  display_name: "Give me a feel"
+  short_description: "Explain a code change with a useful visual"
+policy:
+  allow_implicit_invocation: true
