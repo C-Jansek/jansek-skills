@@ -1,0 +1,5 @@
+interface:
+  display_name: "Ask Jansek"
+  short_description: "Find a skill or playbook and phrase a prompt"
+policy:
+  allow_implicit_invocation: false
