@@ -10,9 +10,10 @@ The playbook will guide the agent to handle the request, using reusable skills f
 
 Playbooks are a series of steps the agent will execute to respond to a specific request.
 
-| Task                 | Playbook                                                 |
-|----------------------|----------------------------------------------------------|
-| Create or edit skill | ./skills/jansek-mode/references/playbooks/write-skill.md |
+| Task                    | Playbook                                                    |
+|-------------------------|-------------------------------------------------------------|
+| Create or edit skill    | ./skills/jansek-mode/references/playbooks/write-skill.md    |
+| Create or edit playbook | ./skills/jansek-mode/references/playbooks/write-playbook.md |
 
 ### Ideas
 

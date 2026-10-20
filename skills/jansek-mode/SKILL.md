@@ -8,9 +8,10 @@ Router skill to execute a playbook, chosen based on the specific request from th
 
 ### Playbooks
 
-| Task                 | Playbook                                                 | Use when                                                    |
-|----------------------|----------------------------------------------------------|-------------------------------------------------------------|
-| Create or edit skill | ./skills/jansek-mode/references/playbooks/write-skill.md | User want to create a new skill, or edit an existing skill. |
+| Task                    | Playbook                                                    | Use when                                                          |
+|-------------------------|-------------------------------------------------------------|-------------------------------------------------------------------|
+| Create or edit skill    | ./skills/jansek-mode/references/playbooks/write-skill.md    | User want to create a new skill, or edit an existing skill.       |
+| Create or edit playbook | ./skills/jansek-mode/references/playbooks/write-playbook.md | User want to create a new playbook, or edit an existing playbook. |
 
 When no playbook matches, stop here and tell the user.
 
