@@ -19,3 +19,10 @@ When no playbook matches, stop here and tell the user.
 When using subagents or providing context to other agents, mention it is part of a /jansek-mode request and mention the
 current playbook.
 This provides the other agent with the required context.
+
+## External service approval gates (e.g. GitLab)
+
+Before every external service write operation (like to GitLab), explain the exact operation, target, and change and wait for explicit approval.
+Get separate approval before pushing a branch and before creating an MR or comment.
+Approval for one operation does not authorize another.
+If an operation is not approved, leave it undone and report what remains.

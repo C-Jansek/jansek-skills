@@ -1,6 +1,6 @@
 # Implement a feature
 
-Take one existing work item through specification, implementation, joint review, acceptance checks, and a jointly prepared GitLab merge request.
+Take one existing work item through specification, implementation, joint review, acceptance checks, and a jointly prepared merge request.
 Use the named skills for their procedures; this playbook connects them and defines the approval gates.
 
 ## Invocation
@@ -37,16 +37,9 @@ If criteria failed or remain unchecked, agree whether to fix and reverify or car
 ### MR draft
 
 Invoke `/merge-request` with the issue, final diff, test results, and acceptance outcomes.
-Review the draft with the user.
-
-## GitLab approval gates
-
-Before every GitLab write, explain the exact operation, target, and change and wait for explicit approval.
-Get separate approval before pushing the branch and before creating the draft MR.
-Approval for one operation does not authorize another.
-If an operation is not approved, leave it undone and report what remains.
+Review the draft with the user and post only after approval.
 
 ## Outcome
 
 Report the implementation result, review and acceptance outcomes, and MR status.
-Distinguish local drafts from changes actually pushed or created in GitLab.
+Distinguish local drafts from changes actually pushed or created remotely.
