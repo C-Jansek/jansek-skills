@@ -1,0 +1,30 @@
+# Cursor Custom Modes and the Jansek-mode skill
+
+Checked against Cursor’s official documentation on 2026-10-29. Cursor’s current docs use “Custom Mode” to mean a skill kept active; they do not describe a separate mode configuration system for per-mode models or tools.
+
+## What a Custom Mode configures
+
+- **Persistence of skill instructions:** typing `/skill` and pressing Enter attaches that skill to one message; choosing **Use as Mode** (or Option+Enter on Mac / Alt+Enter on Windows) keeps it in context on every turn until the mode is exited. Cursor says this can remain active while the agent works for hours. [Prompting agents](https://cursor.com/docs/agent/prompting#custom-modes), [Agent Skills](https://cursor.com/docs/skills#using-a-skill-as-a-custom-mode), [CLI release notes](https://cursor.com/docs/release-notes#cli-aug-11-2026-skills-custom-modes-and-goals).
+- **The skill supplies the behavior:** a skill’s `SKILL.md` contains its instructions and can include references, scripts, and assets. Frontmatter controls its name, description, discovery/invocation (`disable-model-invocation`), file scoping (`paths`), and optional badge styling (`icon`, `color`). The mode badge reflects the active skill. [Skill format and fields](https://cursor.com/docs/skills#skillmd-file-format), [skill resources](https://cursor.com/docs/skills#including-scripts-in-skills).
+- **Not a documented tool/model profile:** the current Custom Mode documentation describes sticky skill context and badge styling, not per-mode tool permissions or model selection. Cursor documents prompts, tool access, and model configuration for **custom subagents** separately. So treat “a Custom Mode configures its own tools/model” as unsupported by these current docs, rather than assuming a mode does so. [Custom Modes](https://cursor.com/docs/agent/prompting#custom-modes), [Subagents](https://cursor.com/docs/subagents#custom-subagents).
+- **Different from rules/instructions:** Cursor Rules and `AGENTS.md` are reusable prompt-level guidance included according to their own always/relevance/path/manual scopes; a skill is a packaged capability that can be invoked once or kept active as a mode. [Rules](https://cursor.com/docs/rules), [Agent Skills](https://cursor.com/docs/skills#how-skills-work).
+
+## Agents Window and long-running work
+
+The Agents Window is Cursor’s agent-first workspace, supporting work across repositories and environments. Its documented-only-here features include parallel agents, cloud subagents, and worktrees; Custom Modes are also available there (and in the CLI), but are still skill-backed modes rather than a special Agents Window profile. [Agents Window](https://cursor.com/docs/agent/agents-window), [Prompting agents](https://cursor.com/docs/agent/prompting#custom-modes).
+
+For duration, distinguish **keeping instructions in context** from **keeping work running**:
+
+- A mode keeps its skill active for the session, including multi-hour work. `/goal` is the documented mechanism for a long-lived objective, and Cursor recommends pairing a goal with a Custom Mode when the agent should follow a playbook; `/loop` is for recurring prompts or skills. [Custom Modes](https://cursor.com/docs/agent/prompting#custom-modes), [Agent overview: Goals](https://cursor.com/docs/agent/overview#goals-with-goal).
+- Subagents have separate context windows; they start clean, and the parent supplies relevant context. They can run foreground or background, and custom subagents have their own prompt and configurable model/access. Background work can be resumed by agent ID. [Subagents](https://cursor.com/docs/subagents#how-subagents-work), [resuming subagents](https://cursor.com/docs/subagents#resuming-subagents).
+- In the Agents Window, `/in-cloud` hands a task to a cloud subagent on its own VM and branch while the parent continues. For work spanning projects or months, Cursor describes **Projects** as a coordinator that plans and delegates to agents. [Cloud subagents](https://cursor.com/docs/subagents#cloud-subagents), [Projects](https://cursor.com/docs/agent/projects).
+
+**Unspecified inheritance:** Cursor’s docs say subagents start with clean context and the parent supplies relevant information, but do not say whether an active parent Custom Mode is automatically copied into child, cloud-subagent, or Project-worker context. Do not rely on implicit inheritance; pass the playbook’s relevant instructions in the delegated task or configure the worker’s prompt. [Subagents](https://cursor.com/docs/subagents#how-subagents-work), [custom subagents](https://cursor.com/docs/subagents#custom-subagents).
+
+## Comparison with this repository’s Jansek-mode
+
+[`skills/jansek-mode/SKILL.md`](../../skills/jansek-mode/SKILL.md) is conceptually a **router skill**: it is explicitly invoked (`disable-model-invocation: true`), selects a matching playbook, and stops when none matches. [`implement-feature.md`](../../skills/jansek-mode/references/playbooks/implement-feature.md) is one such playbook, connecting specification, implementation, joint review, acceptance, and MR preparation with approval stops. If Cursor discovers and loads this skill, using it as a Custom Mode would keep that router guidance active across turns; the mode itself would not replace the playbook or make the workflow autonomous. [Cursor skill invocation rules](https://cursor.com/docs/skills#disabling-automatic-invocation), [Custom Modes](https://cursor.com/docs/agent/prompting#custom-modes).
+
+One integration caveat: this repository stores the skill under `skills/`, while Cursor documents project skill discovery under `.agents/skills/` and `.cursor/skills/` (plus user-level locations). Thus this is a conceptual comparison; the documented discovery rules do not establish that Cursor auto-discovers this repository path as-is. [Skill directories](https://cursor.com/docs/skills#skill-directories).
+
+The two Jansek files were already modified in the worktree when inspected; this note does not change them.
