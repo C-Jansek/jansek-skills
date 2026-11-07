@@ -1,0 +1,5 @@
+interface:
+  display_name: "Github"
+  short_description: "Work with GitHub issues, comments, and merge request links using the restricted token"
+policy:
+  allow_implicit_invocation: true
