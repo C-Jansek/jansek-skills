@@ -1,5 +1,0 @@
-interface:
-  display_name: "Specify"
-  short_description: "Clarify a work item's goal, interface, and acceptance criteria"
-policy:
-  allow_implicit_invocation: true

@@ -1,6 +1,6 @@
 ---
 name: shape
-description: Shape a raw idea into a Pitch — a bet-ready document at the right level of abstraction: rough, solved, bounded.
+description: "Shape a raw idea into a Pitch — a bet-ready document at the right level of abstraction: rough, solved, bounded."
 disable-model-invocation: true
 ---
 

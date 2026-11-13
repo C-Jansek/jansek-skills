@@ -1,5 +1,0 @@
-interface:
-  display_name: "Merge request"
-  short_description: "Draft a GitLab merge-request title and body"
-policy:
-  allow_implicit_invocation: true

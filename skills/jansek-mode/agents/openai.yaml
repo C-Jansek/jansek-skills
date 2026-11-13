@@ -1,5 +1,0 @@
-interface:
-  display_name: "Jansek mode"
-  short_description: "Router skill to handle all kinds of user requests according to playbooks."
-policy:
-  allow_implicit_invocation: false

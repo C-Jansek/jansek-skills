@@ -1,5 +1,0 @@
-interface:
-  display_name: "Principle collection of centers"
-  short_description: "Principle: structure software as centers with constant density and increasing fidelity. Use when explicitly directed."
-policy:
-  allow_implicit_invocation: true
