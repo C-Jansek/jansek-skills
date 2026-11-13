@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 A Pitch is in hand — shaped, bounded, de-risked. Delivering means building one vertical slice at a time, discovering scopes through the work itself. Scopes are not pre-planned; they emerge as you walk the territory. The scope map is the living artifact — always up to date, always the first thing read.
 
-This skill delegates implementation to `/implement`, design probes to `/prototype`, and fact-finding to `/research`. The human stays in the lead: the agent proposes, the human decides.
+This skill delegates implementation to `/implementation`, design probes to `/prototype`, and fact-finding to `/research`. The human stays in the lead: the agent proposes, the human decides.
 
 ## Assign projects, not tasks
 
@@ -57,7 +57,7 @@ When a scope's boundaries shift or new scopes form, edit the map's scopes in pla
 
 Each checklist item in a scope graduates to a **child ticket** (of the map) when it accumulates enough detail to stand alone. Before that, it lives inline. Ticket types:
 
-- **Implementation** — downhill work. Delegate to `/implement`.
+- **Implementation** — downhill work. Delegate to `/implementation`.
 - **Research** — reading, investigating, fact-finding. Resolve with `/research`.
 - **Prototype** — throwaway code to answer a design question. Resolve with `/prototype`.
 
@@ -110,7 +110,7 @@ User invokes with a scope map (issue URL or name).
 
 2. **Pick the next task.** Scan discovered tasks (unprefixed, unchecked). Propose one based on: core (central to the Pitch), small (finishable this session), novel (eliminates uncertainty). If multiple candidates, present them for the user to choose. If no discovered tasks remain and imagined tasks exist, the user must confirm graduation before one is picked. Completion: user picks a task.
 
-3. **Work the task.** If it warrants a child ticket (enough detail), create it — a child issue of the scope map. Delegate: `/implement` for building, `/research` for facts, `/prototype` for design questions. Completion: task done — checklist item checked, or child ticket closed with resolution.
+3. **Work the task.** If it warrants a child ticket (enough detail), create it — a child issue of the scope map. Delegate: `/implementation` for building, `/research` for facts, `/prototype` for design questions. Completion: task done — checklist item checked, or child ticket closed with resolution.
 
 4. **Update the scope map.** After task completion:
    - Check the item in the scope map
